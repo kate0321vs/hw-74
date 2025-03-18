@@ -4,7 +4,8 @@ import writeFile from "../writeFile";
 const messagesRouter = express.Router();
 
 messagesRouter.get('/', async (req, res) => {
-
+    const messages = await writeFile.getMessages()
+    res.send(messages)
 });
 
 messagesRouter.post('/', async (req, res) => {
